@@ -1,1 +1,0 @@
-<h1>Show <span ng-bind="computer.id"></span></h1>

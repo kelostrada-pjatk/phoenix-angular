@@ -17,9 +17,6 @@ defmodule ComputerStore.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/computers", ComputerPageController, :index
-    get "/computers/show", ComputerPageController, :show
-    get "/computers/edit", ComputerPageController, :edit
   end
 
   scope "/api", ComputerStore do

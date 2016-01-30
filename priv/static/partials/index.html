@@ -15,8 +15,12 @@
     <td><span ng-bind="computer.id"></span></td>
     <td><span ng-bind="computer.name"></span></td>
     <td><span ng-bind="computer.price"></span></td>
-    <td><a href="#/computer/{{computer.id}}">Show</a></td>
+    <td><a href="#/computers/{{computer.id}}">Show</a></td>
   </tr>
 
   </tbody>
 </table>
+
+<div class="row">
+  <a href="#/computers/new" class="btn btn-info">Add new computer</a>
+</div>

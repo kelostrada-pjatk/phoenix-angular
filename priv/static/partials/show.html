@@ -1,0 +1,40 @@
+<h1><span ng-bind="computer.name"></span></h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2 left-col">ID</div>
+        <div class="col-lg-10"><span ng-bind="computer.id"/></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 left-col">Name</div>
+        <div class="col-lg-10"><span ng-bind="computer.name"/></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 left-col">Price</div>
+        <div class="col-lg-10"><span ng-bind="computer.price"/></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 left-col">CPU</div>
+        <div class="col-lg-10"><span ng-bind="computer.cpu"/></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 left-col">GPU</div>
+        <div class="col-lg-10"><span ng-bind="computer.gpu"/></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 left-col">RAM</div>
+        <div class="col-lg-10"><span ng-bind="computer.ram"/></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 left-col">Mainboard</div>
+        <div class="col-lg-10"><span ng-bind="computer.mainboard"/></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 left-col">Drive</div>
+        <div class="col-lg-10"><span ng-bind="computer.drive"/></div>
+    </div>
+</div>
+
+<div class="row">
+    <a href="#/computers/{{computer.id}}/edit" class="btn btn-info">Edit</a>
+</div>
