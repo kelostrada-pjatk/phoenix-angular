@@ -1,3 +1,22 @@
 <h1>index</h1>
 
-<button ng-click="test()">Test</button>
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr ng-repeat="computer in computers">
+    <td><span ng-bind="computer.id"></span></td>
+    <td><span ng-bind="computer.name"></span></td>
+    <td><span ng-bind="computer.price"></span></td>
+    <td><a href="#/computer/{{computer.id}}">Show</a></td>
+  </tr>
+
+  </tbody>
+</table>

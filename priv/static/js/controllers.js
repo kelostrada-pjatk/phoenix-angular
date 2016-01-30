@@ -16,14 +16,35 @@ computersApp.config(function ($routeProvider){
     });
 });
 
-computersApp.controller("computersCtrl", function() {
+computersApp.controller("computersCtrl", ['$scope', '$http', function($scope, $http) {
 
-});
+    $scope.computers = [];
 
-computersApp.controller("computerCtrl", function() {
+    var retrieveComputers = function() {
+        $http.get("/api/computers")
+            .success(function(data,status,headers,config) {
+                $scope.computers = data.data;
+            })
+            .error(function(data,status,headers,config){
+                console.log(data,status);
+            });
+    };
 
-});
+    retrieveComputers();
+}]);
 
-var test = function() {
-    console.log("test");
-}
+computersApp.controller("computerCtrl", ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+
+    var retrieveComputer = function(id) {
+        $http.get("/api/computers/" + id)
+            .success(function(data,status,headers,config) {
+                $scope.computer = data.data;
+            })
+            .error(function(data,status,headers,config){
+                console.log(data,status);
+            });
+    };
+
+    retrieveComputer($routeParams.id);
+
+}]);
