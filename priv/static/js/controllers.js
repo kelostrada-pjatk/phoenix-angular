@@ -24,7 +24,7 @@ computersApp.config(function ($routeProvider){
     });
 });
 
-computersApp.controller("computersCtrl", ['$scope', '$http', function($scope, $http) {
+computersApp.controller("computersCtrl", ['$rootScope', '$scope', '$http', function($rootScope, $scope, $http) {
 
     $scope.computers = [];
 

@@ -1,34 +1,41 @@
-<h1><span ng-if="!computer.name">New Computer</span><span ng-if="computer" ng-bind="computer.name"/></h1>
+<h2><span ng-if="!computer.name">New Computer</span><span ng-if="computer" ng-bind="computer.name"/></h2>
 
 <form name="computerForm">
 <div class="container">
-    <div class="row">
-        <div class="col-lg-2 left-col">Name</div>
-        <div class="col-lg-10"><input type="text" ng-model="computer.name" placeholder="Computer name" ng-required="true" ng-pattern="/.*/"/></div>
+    <div class="form-group" ng-class="{'has-error': !computerForm.name.$valid}">
+        <label class="control-label">Name</label>
+        <input name="name" type="text" ng-model="computer.name" placeholder="Computer name" ng-required="true" ng-pattern="/.*/" class="form-control"/>
+        <div class="control-label" ng-show="!computerForm.name.$valid">Required!</div>
     </div>
-    <div class="row">
-        <div class="col-lg-2 left-col">Price</div>
-        <div class="col-lg-10"><input type="text" ng-model="computer.price" placeholder="Price" ng-required="true" ng-pattern="/^[0-9\.,]+$/"/></div>
+    <div class="form-group" ng-class="{'has-error': !computerForm.price.$valid}">
+        <label class="control-label">Price</label>
+        <input class="form-control" name="price" type="text" ng-model="computer.price" placeholder="Price" ng-required="true" ng-pattern="/^[0-9\.]+$/"/>
+        <div class="control-label" ng-show="!computerForm.price.$valid">Must be a number!</div>
     </div>
-    <div class="row">
-        <div class="col-lg-2 left-col">CPU</div>
-        <div class="col-lg-10"><input type="text" ng-model="computer.cpu" placeholder="CPU" ng-required="true" ng-pattern="/.*/"/></div>
+    <div class="form-group" ng-class="{'has-error': !computerForm.cpu.$valid}">
+        <label class="control-label">CPU</label>
+        <input class="form-control" name="cpu" type="text" ng-model="computer.cpu" placeholder="CPU" ng-required="true" ng-pattern="/.*/"/>
+        <div class="control-label" ng-show="!computerForm.cpu.$valid">Required!</div>
     </div>
-    <div class="row">
-        <div class="col-lg-2 left-col">GPU</div>
-        <div class="col-lg-10"><input type="text" ng-model="computer.gpu" placeholder="GPU" ng-required="true" ng-pattern="/.*/"/></div>
+    <div class="form-group" ng-class="{'has-error': !computerForm.gpu.$valid}">
+        <label class="control-label">GPU</label>
+        <input class="form-control" name="gpu" type="text" ng-model="computer.gpu" placeholder="GPU" ng-required="true" ng-pattern="/.*/"/>
+        <div class="control-label" ng-show="!computerForm.gpu.$valid">Required!</div>
     </div>
-    <div class="row">
-        <div class="col-lg-2 left-col">RAM</div>
-        <div class="col-lg-10"><input type="text" ng-model="computer.ram" placeholder="" ng-required="true" ng-pattern="/^[0-9]+$/"/></div>
+    <div class="form-group" ng-class="{'has-error': !computerForm.ram.$valid}">
+        <label class="control-label">RAM</label>
+        <input class="form-control" name="ram" type="text" ng-model="computer.ram" placeholder="RAM (GB)" ng-required="true" ng-pattern="/^[0-9]+$/"/>
+        <div class="control-label" ng-show="!computerForm.ram.$valid">Must be integer!</div>
     </div>
-    <div class="row">
-        <div class="col-lg-2 left-col">Mainboard</div>
-        <div class="col-lg-10"><input type="text" ng-model="computer.mainboard" placeholder="" ng-required="true" ng-pattern="/.*/"/></div>
+    <div class="form-group" ng-class="{'has-error': !computerForm.mainboard.$valid}">
+        <label class="control-label">Mainboard</label>
+        <input class="form-control" name="mainboard" type="text" ng-model="computer.mainboard" placeholder="Mainboard" ng-required="true" ng-pattern="/.*/"/>
+        <div class="control-label" ng-show="!computerForm.mainboard.$valid">Required!</div>
     </div>
-    <div class="row">
-        <div class="col-lg-2 left-col">Drive</div>
-        <div class="col-lg-10"><input type="text" ng-model="computer.drive" placeholder="" ng-required="true" ng-pattern="/.*/"/></div>
+    <div class="form-group" ng-class="{'has-error': !computerForm.drive.$valid}">
+        <label class="control-label">Drive</label>
+        <input class="form-control" name="drive" type="text" ng-model="computer.drive" placeholder="Drive" ng-required="true" ng-pattern="/.*/"/>
+        <div class="control-label" ng-show="!computerForm.drive.$valid">Required!</div>
     </div>
     <button class="btn btn-primary" ng-click="editComputer(computer)" ng-disabled="computerForm.$invalid">Save</button>
 </div>
