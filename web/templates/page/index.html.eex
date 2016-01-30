@@ -12,6 +12,7 @@
   <script src="<%= static_path(@conn, "/js/angular.min.js") %>"></script>
   <script src="<%= static_path(@conn, "/js/angular-route.min.js") %>"></script>
   <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  <script src="<%= static_path(@conn, "/js/controllers.js") %>"></script>
   </head>
 
   <body>
